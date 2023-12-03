@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREAS</title>
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'><link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/style.css">    
+</head>
+<body>
+    <header>
+        <h1>CREAS</h1>        
+        <h2 class="subtitulo">CENTRO DE RECEPCIÓN Y RECUPERACIÓN DE ANIMALES SILVESTRES</h2> 
+    </header>
+    <nav>
+        <!-- menú desplegable izquierda -->
+        <div class="sidebar">
+            <div class="logo-details">
+            <i class='bx bxl-c-plus-plus icon'></i>
+            <div class="logo_name">CREAS</div>
+            <i class='bx bx-menu' id="btn"></i>        
+            </div>
+            <ul class="nav-list">
+                <li class="opcionSegunRol invisible">
+                    <i class='bx bx-search'></i>
+                    <input type="text" placeholder="Buscar Donante...">
+                    <span class="tooltip">Buscar donante</span>
+                </li>
+                <!-- Opción Iniciar Sesión -->
+                <li class="opcionSegunRol invisible">
+                    <a href="#" class="menuItem">
+                    <i class='bx bx-home'></i>
+                    <span class="links_name">Inicio</span>
+                    </a>
+                    <span class="tooltip">Inicio</span>
+                </li>
+                <li class="opcionSegunRol invisible">
+                    <a href="#" class="menuItem">
+                    <i class='bx bx-user' id="loginBtn"></i>
+                    <span class="links_name">Iniciar Sesión</span>
+                    </a>
+                    <span class="tooltip">Iniciar Sesión</span>
+                </li>
+                <li class="opcionSegunRol invisible">
+                    <a href="#" class="menuItem">
+                    <i class='bx bx-id-card'></i>
+                    <span class="links_name">Donantes</span>
+                    </a>
+                    <span class="tooltip">Donantes</span>
+                </li>
+                <li class="opcionSegunRol invisible">
+                    <a href="#" class="menuItem">
+                    <i class='bx bx-archive'></i>
+                    <span class="links_name">Registro de Donaciones</span>
+                    </a>
+                    <span class="tooltip">Registro Donaciones</span>
+                </li>
+                <li class="opcionSegunRol invisible">
+                    <a href="#" class="menuItem">
+                    <i class='bx bx-dollar-circle'></i>
+                    <span class="links_name">Donar</span>
+                    </a>
+                    <span class="tooltip">Donar</span>
+                </li>
+                <li class="opcionSegunRol invisible">
+                    <a href="#" class="menuItem">
+                    <i class='bx bxs-skull'></i>
+                    <span class="links_name">Animales Cautivos</span>
+                    </a>
+                    <span class="tooltip">Animales Cautivos</span>
+                </li>
+                <li class="profile">
+                    <div class="profile-details">
+                    <img src="https://drive.google.com/uc?export=view&id=1ETZYgPpWbbBtpJnhi42_IR3vOwSOpR4z" alt="profileImg">
+                    <div class="name_job">
+                        <div class="name">Wilmer Patiño</div>
+                        <div class="job">Web designer</div>
+                    </div>
+                    </div>
+                    <a href="#">
+                    <i class='bx bx-log-out' id="log_out"></i>
+                    </a>      
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="tablero">        
+        <section class="seccion visible">
+            <p class="tituloSeccion">INICIO</p>
+            <div id="contenidoInicio">                
+                <P id="presentacion">
+                    El programa “Centro de Recepción y Recuperación de Animales Silvestre ”(CREAS) de CORPOAMAZONIA busca proteger la fauna silvestre rescatada. <b>usuario: wilmer  password:123abc</b> o <b>usuario: emmy  password:124abc</b>
+                </P>
+                <img src="./img/imagenInicio.png" alt="" id="imgPresentacion">
+            </div>
+        </section>
+        <section class="seccion visible">
+            <p class="tituloSeccion" id="tituloInicioSesion">INICIAR SESIÓN</p>            
+            <form class="form" id="formInicioSesion">
+                <div class="entrada">
+                    <input type="text" required id="nombUsuario">
+                    <label class="etiqueta">
+                        <span class="campoDeTexto">Usuario</span>
+                    </label>
+                </div>
+                <div class="entrada" id="entradaPass">
+                    <input type="password" required id="passUsuario">
+                    <label class="etiqueta">
+                        <span class="campoDeTexto">Contraseña</span>
+                    </label>
+                </div>
+                <button class="boton" id="sesionOnBtn">Iniciar Sesión</button>                
+            </form>
+        </section>
+        <section class="seccion visible">
+            <p class="tituloSeccion">DONANTES</p>
+            <p>Estas son las personas que como tu, nos apoyan con el cuidado de nuestros especímenes</p>                
+            <select multiple name="donantes" id="listadoDonantes"></select>                            
+            <p>Total de personas Donantes: <span id="textoTotalDonantes"></span></p>
+        </section>
+        <section class="seccion visible">
+            <p class="tituloSeccion">REGISTRO DE DONACIONES</p>
+            <select multiple name="donaciones" id="listaDonaciones"></select>                
+            Click en el registro para ver el Detalle:
+            <p id="detalleDonacion"></p>                    
+            <p>Total Aportes: USD$<span id="textoTotalAportes"></span></p>
+        </section>
+        <section class="seccion visible">
+            <p>DONAR</p>            
+            <form id="donarForm">
+                <p>Para iniciar una donación primero seleccione el especímen (Animal) que será beneficiario de su donación</p>
+                <button class="boton" id="especimenesBtn">Especímenes</button>                
+                <div class="entrada">
+                    <input type="text" required id="idEspecimen" readonly>
+                    <label class="etiqueta">
+                        <span class="campoDeTexto"></span>
+                    </label>
+                </div>
+                <label>ID del especímen animal beneficiario</label>
+                <div class="entrada">
+                    <input type="text" required id="valor">
+                    <label class="etiqueta">
+                        <span class="campoDeTexto">Monto a Donar (USD$)</span>
+                    </label>
+                </div>
+                
+                <label>Su aporte se debitará de su Tarjeta de Crédito</label>                
+                <button class="boton" id="nuevaDonacionBtn">Donar</button>                
+            </form>
+        </section>
+        <section class="seccion visible">
+            <p class="tituloSeccion">ESPECÍMENES ANIMALES</p>
+            <div id="animalesActivos"></div>
+        </section>        
+    </main>
+    <footer>
+        <p>S:P.C. Software: Producción y Creatividad</p>
+        <p>2023</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
